@@ -55,6 +55,7 @@ extensions = [
 	'recommonmark',
     'rst2pdf.pdfbuilder',
     'rinoh.frontend.sphinx',
+    'sphinx.ext.githubpages',
 	#'edit_on_github',
     # Auto-generate section labels.
     'sphinx.ext.autosectionlabel',	
