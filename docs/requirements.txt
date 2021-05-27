@@ -13,4 +13,3 @@ rst2pdf.pdfbuilder
 rinoh.frontend.sphinx
 sphinx.ext.githubpages
 sphinx.ext.autosectionlabel
-xilinx
