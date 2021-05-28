@@ -6,21 +6,11 @@ on:
       - main
 
 jobs:
-  publish:
+  build:
+    name: Push Sphinx Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Check out
-        uses: actions/checkout@v1
-
-      - name: Generate your awesome content
-        uses: ammaraskar/sphinx-action@master
-        with:
-            build-command: "sphinx-build -b html . _build"
-            docs-folder: "docs/"
-
-      - name: Publish generated content to GitHub Pages
-        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
-        with:
-          dir: dist
-          branch: gh-pages
-          token: ${{ secrets.ACCESS_TOKEN }}
+    - uses: seanzhengw/sphinx-pages@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        create_readme: true
