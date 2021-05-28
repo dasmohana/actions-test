@@ -35,7 +35,7 @@ jobs:
         # The above command will fail if no changes were present, so we ignore
         # that.
     - name: Push changes
-      uses: ad-m/github-push-action@main
+      uses: dasmohana/actions-test@main
       with:
         branch: gh-pages
         directory: gh-pages
