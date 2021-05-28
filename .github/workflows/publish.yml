@@ -6,11 +6,14 @@ on:
       - main
 
 jobs:
-  build:
-    name: Push Sphinx Pages
+  publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: seanzhengw/sphinx-pages@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        create_readme: true
+      - name: Check out
+        uses: actions/checkout@v1
+
+      - name: Generate your awesome content
+        uses: ammaraskar/sphinx-action@master
+        with:
+            build-command: "sphinx-build -b html docs build"
+            docs-folder: "docs/"
