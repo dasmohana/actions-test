@@ -8,7 +8,6 @@ on:
 jobs:
   sphinx-docs:
     name: Check sphinx docs on Linux
-    runs-on: "ubuntu-latest"
     - name: Install Sphinx dependencies
       run: |
         cd docs
