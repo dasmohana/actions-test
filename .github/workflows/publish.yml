@@ -6,10 +6,23 @@ on:
       - main
 
 jobs:
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: ammaraskar/sphinx-action@master
+  sphinx-docs:
+    name: Check sphinx docs on Linux
+    runs-on: "ubuntu-latest"
+    - name: Install Sphinx dependencies
+      run: |
+        cd docs
+        pip install -r requirements.txt
+        sphinx-build -b html . _build
+    - name: Create artifact of the html output
+      uses: actions/upload-artifact@v2
       with:
-        docs-folder: "docs/"
+        name: DocumentationHTML
+        path: docs/_build/
+    
+    name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: gh-pages
+        directory: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
