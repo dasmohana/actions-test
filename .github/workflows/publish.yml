@@ -6,14 +6,10 @@ on:
       - main
 
 jobs:
-  publish:
+  docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out
-        uses: actions/checkout@v1
-
-      - name: Generate your awesome content
-        uses: ammaraskar/sphinx-action@master
-        with:
-            build-command: "sphinx-build -b html docs build"
-
+    - uses: actions/checkout@v1
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "docs/"
