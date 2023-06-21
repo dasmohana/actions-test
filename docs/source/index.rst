@@ -7,10 +7,10 @@ Testing GH Actions
    :maxdepth: 3
    :hidden:
 
-   docs/ZynqMPSoC-EDT/1-introduction.rst
-   docs/ZynqMPSoC-EDT/2-getting-started.rst
-   docs/ZynqMPSoC-EDT/3-hello.rst
-   docs/ZynqMPSoC-EDT/4-examples.rst
+   docs/1-introduction.rst
+   docs/2-getting-started.rst
+   docs/3-hello.rst
+   docs/4-examples.rst
 
 
 
